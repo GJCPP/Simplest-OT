@@ -29,8 +29,6 @@ namespace simplest_OT {
 		unsigned char key0[crypto_secretbox_KEYBYTES], key1[crypto_secretbox_KEYBYTES] = {};
 		unsigned char nonce0[crypto_secretbox_NONCEBYTES], nonce1[crypto_secretbox_NONCEBYTES] = {};
 		ED25519::curve_point k0 = B * a, k1 = (B - A) * a;
-		std::cout << k0 << std::endl;
-		std::cout << k1 << std::endl;
 		//randombytes_buf(nonce0, sizeof nonce0);
 		//randombytes_buf(nonce1, sizeof nonce1);
 
@@ -62,7 +60,6 @@ namespace simplest_OT {
 		m.resize(msg_len);
 
 		ED25519::curve_point k = A * b; // g^(ab)
-		std::cout << k << std::endl;
 		unsigned char key[crypto_secretbox_KEYBYTES];
 		unsigned char nonce[crypto_secretbox_NONCEBYTES];
 
